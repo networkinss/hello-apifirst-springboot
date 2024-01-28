@@ -1,3 +1,5 @@
+
+# Used also for artifactId and therefore must not contain uppercase or special characters.
 $APP = "petstore_spring_apifirst"
 $BASE = "com.example"
 $VERSION = "0.0.1"
@@ -30,17 +32,19 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 Pop-Location
-Write-Host ""
-Write-Host "Going to start $APP"
-Write-Host "java -jar -Dserver.port=8080 $JAR"
-Start-Sleep -s 3
-Write-Host ""
-Write-Host "Starting the application with: java -jar -Dserver.port=8080 $JAR"
-Write-Host "After start you can open the application with: http://localhost:8080/"
-Write-Host "and access the swagger-ui with: http://localhost:8080/swagger-ui.html"
-Write-Host "Stop the application with: Ctrl-C"
-java -jar $JAR
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "Error starting $JAR."
-    exit 1
-}
+
+# Comment this in if you directly want to start the application.
+#Write-Host ""
+#Write-Host "Going to start $APP"
+#Write-Host "java -jar -Dserver.port=8080 $JAR"
+#Start-Sleep -s 3
+#Write-Host ""
+#Write-Host "Starting the application with: java -jar -Dserver.port=8080 $JAR"
+#Write-Host "After start you can open the application with: http://localhost:8080/"
+#Write-Host "and access the swagger-ui with: http://localhost:8080/swagger-ui.html"
+#Write-Host "Stop the application with: Ctrl-C"
+#java -jar $JAR
+#if ($LASTEXITCODE -ne 0) {
+#    Write-Host "Error starting $JAR."
+#    exit 1
+#}
