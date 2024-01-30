@@ -8,8 +8,11 @@ com/example/model/ModelApiResponse.class
 com/example/RFC3339DateFormat.class
 com/example/model/Order$StatusEnum.class
 com/example/OpenApiGeneratorApplication.class
+com/example/api/PetApiController.class
+com/example/api/UserApiController.class
 com/example/model/User.class
 com/example/api/PetApi.class
 com/example/api/StoreApi.class
 com/example/api/UserApi.class
 com/example/model/Category.class
+com/example/api/StoreApiController.class

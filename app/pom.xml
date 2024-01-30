@@ -82,10 +82,11 @@
                                 <artifactVersion>0.0.1</artifactVersion>
                                 <configPackage>com.example.config</configPackage>
                                 <basePackage>com.example</basePackage>
+                                <!--Can be set to true after implementing the interfaces. The ApiUtil class can then be deleted. -->
                                 <skipDefaultInterface>false</skipDefaultInterface>
                                 <apiPackage>com.example.api</apiPackage>
                                 <returnSuccessCode>false</returnSuccessCode>
-                                <!-- Added lines -->
+                                <!-- Do not generate controller again. -->
                                 <interfaceOnly>true</interfaceOnly>
                                 <useTags>true</useTags>
                                 <!-- End of added lines -->

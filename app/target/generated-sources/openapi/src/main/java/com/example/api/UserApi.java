@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import jakarta.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-01-28T12:15:49.981291533+01:00[Europe/Zurich]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-01-30T06:53:00.547264486+01:00[Europe/Zurich]")
 @Validated
 @Tag(name = "user", description = "Access to Petstore orders")
 public interface UserApi {

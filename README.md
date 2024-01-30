@@ -43,3 +43,6 @@ Checkout the [OpenAPI Generator for Spring](https://openapi-generator.tech/docs/
 about the parameters.  
 Like you can add the annotation "@Data" with "additionalModelTypeAnnotations" to the model classes in additional-properties.  
 Additional properties can be added in the generate.sh script in the variable ADD.
+
+## API documentation
+See URL http://localhost:8080/swagger-ui/index.html for the generated OAS3 document. 

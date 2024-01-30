@@ -24,7 +24,7 @@ import jakarta.annotation.Generated;
  * Pet
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-01-28T12:15:09.286836851+01:00[Europe/Zurich]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-01-29T05:00:05.335042574+01:00[Europe/Zurich]")
 public class Pet {
 
   private Long id;
