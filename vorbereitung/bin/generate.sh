@@ -15,7 +15,7 @@ sleep 3
 rm -rf ./$APP/*
 java -jar openapi-generator-cli-7.2.0.jar generate -i ./$YAML -g spring -o ./$APP/ $ADD
 if [ ! $? -eq 0 ]; then
-  echo "Error in: java -jar bin/openapi-generator-cli-7.2.0.jar -i ./$YAML -g spring -o ./output/$APP/ $ADD"
+  echo "Error in: java -jar openapi-generator-cli-7.2.0.jar generate -i ./$YAML -g spring -o ./$APP/ $ADD"
   exit 1
 fi
 echo

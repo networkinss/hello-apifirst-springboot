@@ -8,14 +8,14 @@ $YAML = "openapi.yaml"
 $PACKAGE = "basePackage=$BASE,invokerPackage=$BASE,apiPackage=$BASE.api,configPackage=$BASE.config,modelPackage=$BASE.model"
 $ADD = "--additional-properties=useSpringBoot3=true,artifactId=$APP,groupId=$BASE,$PACKAGE,artifactVersion=$VERSION,returnSuccessCode=false,skipDefaultInterface=false,sourceFolder=src/main/java,title=petstore,artifactDescription=PetstoreAPIFirstExample"
 Write-Host "validate"
-java -jar bin/openapi-generator-cli-7.2.0.jar validate -i "./$YAML"
+java -jar openapi-generator-cli-7.2.0.jar validate -i "./$YAML"
 Write-Host "rm -rf ./$APP/*"
 Write-Host "and start generate..."
 Start-Sleep -s 3
 Remove-Item -Recurse "./$APP/*"  -ErrorAction Ignore
-java -jar bin/openapi-generator-cli-7.2.0.jar generate -i "./$YAML" -g spring -o "./$APP/" $ADD
+java -jar openapi-generator-cli-7.2.0.jar generate -i "./$YAML" -g spring -o "./$APP/" $ADD
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "Error in: java -jar bin/openapi-generator-cli-7.2.0.jar -i ./$YAML -g spring -o ./output/$APP/ $ADD"
+    Write-Host "Error in: java -jar openapi-generator-cli-7.2.0.jar generate -i ./$YAML -g spring -o ./$APP/ $ADD"
     exit 1
 }
 Write-Host ""
@@ -27,8 +27,9 @@ Write-Host ""
 mvn clean package
 Write-Host "mv target/$JAR .."
 Move-Item "target/$JAR" ".." -Force
-if ($LASTEXITCODE -ne 0) {
+if (-not $?) {
     Write-Host "Error moving to target folder."
+    Pop-Location
     exit 1
 }
 Pop-Location

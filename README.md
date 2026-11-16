@@ -13,14 +13,18 @@ You should have installed and know how to use:
 - Java 17
 - Maven
 ## 2. Execute checkfiles.sh
-This project uses an OAS3 document from [this little collection]( https://github.com/networkinss/SampleOpenAPICollection[SampleOpenAPICollection).
+This project uses an OAS3 document from [this little collection](https://github.com/networkinss/SampleOpenAPICollection).
 It is the usual Petstore sample with some adjustments like using only JSON and no XML requests.
 OpenAPI Generator is used to generate a Spring Boot stub [OpenAPI Generator](https://openapi-generator.tech/).  
 The script checkfiles.sh will check if the OAS3 document and the OpenAPI Generator is there, and download them if not.  
 
 For adjustements of the OAS3 document, you can use the Swagger Editor: https://editor.swagger.io/.    
 After the execution of the checkfiles.sh script, you should have a **openapi.yaml**  
-and the **openapi-generator-cli-6.2.1.jar** file.  
+and the **openapi-generator-cli-7.2.0.jar** file.  
+The scripts are located in the folder `vorbereitung/bin` and must be run from there:
+```
+cd vorbereitung/bin
+```
 ```
 ./checkfiles.sh
 ```
@@ -31,6 +35,7 @@ to generate the Spring Boot stub.
 It does several steps, and will also build the jar with maven. The lines for running the application is commented.  
 
 There is a Bash script for Linux and also a PowerShell script for Windows.
+Run it from the folder `vorbereitung/bin` as well:
 ```
 ./generate.sh
 ```
@@ -44,7 +49,8 @@ Like you can add the annotation "@Data" with "additionalModelTypeAnnotations" to
 Additional properties can be added in the generate.sh script in the variable ADD.
 
 ## Start
-To start the application, run
+To start the application, run the following command in the generated project folder `vorbereitung/bin/petstore_spring_apifirst`,
+or in the folder `app` for the adjusted version in this repository:
 ```
 mvn spring-boot:run
 ```

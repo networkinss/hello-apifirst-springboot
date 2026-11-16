@@ -168,7 +168,7 @@ public class Pet {
    * @return photoUrls
   */
   @NotNull 
-  @Schema(name = "photoUrls", example = "[\"http://example.com/photo.png\",\"http://example.com/photo2\",\"png\"]", description = "Photo urls.", requiredMode = Schema.RequiredMode.REQUIRED)
+  @Schema(name = "photoUrls", example = "[\"http://example.com/photo.png\",\"http://example.com/photo2.png\"]", description = "Photo urls.", requiredMode = Schema.RequiredMode.REQUIRED)
   @JsonProperty("photoUrls")
   public List<String> getPhotoUrls() {
     return photoUrls;

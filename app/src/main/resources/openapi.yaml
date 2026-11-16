@@ -32,9 +32,9 @@ tags:
     description: Find out more
     url: http://swagger.io
   name: pet
-- description: Operations about user
-  name: store
 - description: Access to Petstore orders
+  name: store
+- description: Operations about user
   externalDocs:
     description: Find out more about our store
     url: http://swagger.io
@@ -801,8 +801,7 @@ components:
       example:
         photoUrls:
         - http://example.com/photo.png
-        - http://example.com/photo2
-        - png
+        - http://example.com/photo2.png
         name: doggie
         id: 10
         category:
@@ -830,8 +829,7 @@ components:
           description: Photo urls.
           example:
           - http://example.com/photo.png
-          - http://example.com/photo2
-          - png
+          - http://example.com/photo2.png
           items:
             type: string
           type: array

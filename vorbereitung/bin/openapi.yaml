@@ -36,9 +36,9 @@ tags:
       description: Find out more
       url: http://swagger.io
   - name: store
-    description: Operations about user
-  - name: user
     description: Access to Petstore orders
+  - name: user
+    description: Operations about user
     externalDocs:
       description: Find out more about our store
       url: http://swagger.io
@@ -678,7 +678,7 @@ components:
           type: array
           items:
             type: string
-          example: [http://example.com/photo.png, http://example.com/photo2,png]
+          example: [http://example.com/photo.png, http://example.com/photo2.png]
           description: 'Photo urls.'
         tags:
           type: array
