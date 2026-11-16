@@ -68,3 +68,5 @@ Possible update: the newest Spring Boot 4 version is 4.1.2 (status as of 2026-11
 Spring Boot 4 is a major version (Spring Framework 7, Jackson 3), so the update is a migration, not only a version change.
 It requires springdoc 3.x. OpenAPI Generator 7.27.0 (newest version, status as of 2026-11-16) supports Spring Boot 4 with the option `useSpringBoot4=true`
 (and optionally `useJackson3=true`); its template writes Spring Boot 4.0.1 into the generated pom.xml, which can then be raised to the newest version.
+
+The update to Spring Boot 4.1.2 (with springdoc 3.2.0 and OpenAPI Generator 7.27.0) is done in the branch `feature/springboot4`.
