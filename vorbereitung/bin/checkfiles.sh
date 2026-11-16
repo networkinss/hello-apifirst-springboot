@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ ! -f openapi-generator-cli-7.2.0.jar ]; then
-  curl -fL https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.2.0/openapi-generator-cli-7.2.0.jar --output ./openapi-generator-cli-7.2.0.jar || { echo "Download of the generator failed."; rm -f ./openapi-generator-cli-7.2.0.jar; exit 1; }
+if [ ! -f openapi-generator-cli-7.27.0.jar ]; then
+  curl -fL https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.27.0/openapi-generator-cli-7.27.0.jar --output ./openapi-generator-cli-7.27.0.jar || { echo "Download of the generator failed."; rm -f ./openapi-generator-cli-7.27.0.jar; exit 1; }
 else
   echo "Generator ok."
 fi

@@ -6,20 +6,20 @@ VERSION=0.0.1
 JAR=$APP-$VERSION.jar
 YAML=openapi.yaml
 PACKAGE=basePackage=$BASE,invokerPackage=$BASE,apiPackage=$BASE.api,configPackage=$BASE.config,modelPackage=$BASE.model
-ADD=--additional-properties=useSpringBoot3=true,apiFirst=true,skipDefaultInterface=false,returnSuccessCode=false,artifactId=$APP,groupId=$BASE,$PACKAGE,artifactVersion=$VERSION,sourceFolder=src/main/java,title=petstore,artifactDescription=PetstoreAPIFirstExample
+ADD=--additional-properties=useSpringBoot4=true,useJackson3=true,apiFirst=true,skipDefaultInterface=false,returnSuccessCode=false,artifactId=$APP,groupId=$BASE,$PACKAGE,artifactVersion=$VERSION,sourceFolder=src/main/java,title=petstore,artifactDescription=PetstoreAPIFirstExample
 echo validate
-java -jar openapi-generator-cli-7.2.0.jar validate -i ./$YAML
+java -jar openapi-generator-cli-7.27.0.jar validate -i ./$YAML
 if [ ! $? -eq 0 ]; then
-  echo "Error in: java -jar openapi-generator-cli-7.2.0.jar validate -i ./$YAML"
+  echo "Error in: java -jar openapi-generator-cli-7.27.0.jar validate -i ./$YAML"
   exit 1
 fi
 echo rm -rf ./$APP/*
 echo and start generate...
 sleep 3
 rm -rf ./$APP/*
-java -jar openapi-generator-cli-7.2.0.jar generate -i ./$YAML -g spring -o ./$APP/ $ADD
+java -jar openapi-generator-cli-7.27.0.jar generate -i ./$YAML -g spring -o ./$APP/ $ADD
 if [ ! $? -eq 0 ]; then
-  echo "Error in: java -jar openapi-generator-cli-7.2.0.jar generate -i ./$YAML -g spring -o ./$APP/ $ADD"
+  echo "Error in: java -jar openapi-generator-cli-7.27.0.jar generate -i ./$YAML -g spring -o ./$APP/ $ADD"
   exit 1
 fi
 echo
