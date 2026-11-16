@@ -68,4 +68,4 @@ Status as of 2026-11-16:
   It builds and runs with these versions, but for Spring Boot 4 springdoc 3.x is the matching version, so it is recommended to raise both in the generated pom.xml
   (as done in `app`).
 
-The last Spring Boot 3 version of this project (Spring Boot 3.5.16, springdoc 2.10.0, OpenAPI Generator 7.2.0) is the commit `c8f42bf`.
+The Spring Boot 3 version of this project (Spring Boot 3.5.16, springdoc 2.10.0, OpenAPI Generator 7.2.0) is on the branch `master`.
