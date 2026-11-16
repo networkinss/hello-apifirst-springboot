@@ -6,9 +6,13 @@ $VERSION = "0.0.1"
 $JAR = "$APP-$VERSION.jar"
 $YAML = "openapi.yaml"
 $PACKAGE = "basePackage=$BASE,invokerPackage=$BASE,apiPackage=$BASE.api,configPackage=$BASE.config,modelPackage=$BASE.model"
-$ADD = "--additional-properties=useSpringBoot3=true,artifactId=$APP,groupId=$BASE,$PACKAGE,artifactVersion=$VERSION,returnSuccessCode=false,skipDefaultInterface=false,sourceFolder=src/main/java,title=petstore,artifactDescription=PetstoreAPIFirstExample"
+$ADD = "--additional-properties=useSpringBoot3=true,apiFirst=true,artifactId=$APP,groupId=$BASE,$PACKAGE,artifactVersion=$VERSION,returnSuccessCode=false,skipDefaultInterface=false,sourceFolder=src/main/java,title=petstore,artifactDescription=PetstoreAPIFirstExample"
 Write-Host "validate"
 java -jar openapi-generator-cli-7.2.0.jar validate -i "./$YAML"
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Error in: java -jar openapi-generator-cli-7.2.0.jar validate -i ./$YAML"
+    exit 1
+}
 Write-Host "rm -rf ./$APP/*"
 Write-Host "and start generate..."
 Start-Sleep -s 3
@@ -19,12 +23,17 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 Write-Host ""
-Write-Host "Now create jar with 'cd $APP/target'"
+Write-Host "Now create jar with 'cd $APP'"
 Write-Host "'mvn clean package'"
 Start-Sleep -s 3
 Push-Location "$APP/"
 Write-Host ""
 mvn clean package
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Error in: mvn clean package"
+    Pop-Location
+    exit 1
+}
 Write-Host "mv target/$JAR .."
 Move-Item "target/$JAR" ".." -Force
 if (-not $?) {

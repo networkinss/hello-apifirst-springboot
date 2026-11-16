@@ -3,8 +3,8 @@ info:
   contact:
     email: openapi@inss.ch
   description: "Forked and modified by International Network Support & Service - Glas.\n\
-    Modification are -> \n - removed xml and x-www-form-urlencoded (leaving only application/json).\
-    \ \n - Adding examples to paramters. \n - Validated with openapi-style-validator-cli.\
+    Modifications are -> \n - removed xml and x-www-form-urlencoded (leaving only application/json).\
+    \ \n - Adding examples to parameters. \n - Validated with openapi-style-validator-cli.\
     \ \nThis is a sample Pet Store Server based on the OpenAPI 3.0 specification.\
     \  You can find out more about\nSwagger at [http://swagger.io](http://swagger.io).\
     \ In the third iteration of the pet store, we've switched to the design first\
@@ -107,7 +107,7 @@ paths:
       - tag: pet
   /pet/findbystatus:
     get:
-      description: Multiple status values can be provided with comma separated strings
+      description: Finds pets by a single status value.
       operationId: findPetsByStatus
       parameters:
       - description: Status values that need to be considered for filter
@@ -158,8 +158,8 @@ paths:
         required: false
         schema:
           example:
-          - tags1
-          - tags2
+          - tag1
+          - tag2
           items:
             type: string
           type: array
@@ -410,7 +410,7 @@ paths:
         name: orderId
         required: true
         schema:
-          example: 1001
+          example: 1
           format: int64
           type: integer
         style: simple
@@ -636,7 +636,7 @@ paths:
       description: This can only be done by the logged in user.
       operationId: updateUser
       parameters:
-      - description: name that need to be deleted
+      - description: The name of the user that needs to be updated
         explode: false
         in: path
         name: username
@@ -662,21 +662,6 @@ paths:
       x-tags:
       - tag: user
 components:
-  requestBodies:
-    Pet:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Pet'
-      description: Pet object that needs to be added to the store
-    UserArray:
-      content:
-        application/json:
-          schema:
-            items:
-              $ref: '#/components/schemas/User'
-            type: array
-      description: List of user object
   schemas:
     Order:
       example:

@@ -23,3 +23,7 @@
 hs_err_pid*
 replay_pid*
 /vorbereitung/bin/petstore_spring_apifirst/
+
+# Maven build output and IntelliJ module files
+target/
+*.iml

@@ -9,6 +9,10 @@ PACKAGE=basePackage=$BASE,invokerPackage=$BASE,apiPackage=$BASE.api,configPackag
 ADD=--additional-properties=useSpringBoot3=true,apiFirst=true,skipDefaultInterface=false,returnSuccessCode=false,artifactId=$APP,groupId=$BASE,$PACKAGE,artifactVersion=$VERSION,sourceFolder=src/main/java,title=petstore,artifactDescription=PetstoreAPIFirstExample
 echo validate
 java -jar openapi-generator-cli-7.2.0.jar validate -i ./$YAML
+if [ ! $? -eq 0 ]; then
+  echo "Error in: java -jar openapi-generator-cli-7.2.0.jar validate -i ./$YAML"
+  exit 1
+fi
 echo rm -rf ./$APP/*
 echo and start generate...
 sleep 3
@@ -19,12 +23,16 @@ if [ ! $? -eq 0 ]; then
   exit 1
 fi
 echo
-echo Now create jar with cd $APP/target
+echo Now create jar with cd $APP
 echo 'mvn clean package'
 sleep 3
 pushd $APP/ || exit 1
 echo
 mvn clean package
+if [ ! $? -eq 0 ]; then
+  echo "Error in: mvn clean package"
+  exit 1
+fi
 echo mv target/$JAR ..
 mv target/$JAR ..
 if [ ! $? -eq 0 ]; then

@@ -8,7 +8,7 @@ Use cases are for example:
 - Present to business to show how the API will look like 
 - Get feedback on the API from other teams
 ## 1. Requirements
-To generate a Spring Boot stub from OpenAPI (OAS3), you need of course the OpenAPI document, along with with usual Java tools.  
+To generate a Spring Boot stub from OpenAPI (OAS3), you need of course the OpenAPI document, along with the usual Java tools.  
 You should have installed and know how to use:
 - Java 17
 - Maven
@@ -18,7 +18,7 @@ It is the usual Petstore sample with some adjustments like using only JSON and n
 OpenAPI Generator is used to generate a Spring Boot stub [OpenAPI Generator](https://openapi-generator.tech/).  
 The script checkfiles.sh will check if the OAS3 document and the OpenAPI Generator is there, and download them if not.  
 
-For adjustements of the OAS3 document, you can use the Swagger Editor: https://editor.swagger.io/.    
+For adjustments of the OAS3 document, you can use the Swagger Editor: https://editor.swagger.io/.    
 After the execution of the checkfiles.sh script, you should have a **openapi.yaml**  
 and the **openapi-generator-cli-7.2.0.jar** file.  
 The scripts are located in the folder `vorbereitung/bin` and must be run from there:
@@ -32,7 +32,7 @@ cd vorbereitung/bin
 ## 3. Generate the Spring Boot stub
 Now once you have the generator and the OAS3 document, you can use the script **generate.sh**
 to generate the Spring Boot stub.  
-It does several steps, and will also build the jar with maven. The lines for running the application is commented.  
+It does several steps, and will also build the jar with maven. The lines for running the application are commented out.  
 
 There is a Bash script for Linux and also a PowerShell script for Windows.
 Run it from the folder `vorbereitung/bin` as well:
